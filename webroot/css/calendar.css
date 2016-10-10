@@ -1,0 +1,181 @@
+ul {list-style-type: none;}
+.month {
+    padding: 20px 10px;
+    width: 100%;
+    background: #1abc9c;
+}
+/* Month list */
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.month ul li.prev:hover,.month ul li.next:hover {
+  transform: scale(1.25);
+}
+.month ul li a {
+  color: white;
+}
+
+/* Previous button inside month header */
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+/* Next button */
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+.month .text {
+  text-align: center;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color:#ddd;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 14.2%;
+    color: #666;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Days (1-31) */
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 14.2%;
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size:16px;
+    color:#777;
+    padding:2px;
+}
+
+/* .days li span {
+  padding: 2px;
+}
+ */
+/* Highlight the "current" day */
+
+.days li.active {
+    background: #1abc9c;
+}
+.days li.prev {
+    background: #d6d6d6;
+    color: #bbb !important
+}
+.days li.current {
+}
+
+ul.day {
+  margin-left: 0;
+  position: relative;
+  height:48px;
+}
+.day li.am,.day li.pm {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 48.6%;
+  display: block;
+}
+.day li.am {
+  float: left;
+  background-color:#ddd ;
+  margin-left:1%;
+}
+.day li.am:hover {
+  background-color:#ccc ;
+}
+.day li.am.active,.day li.pm.active {
+  background-color:#1abc9c;
+  cursor:pointer;
+}
+.day li.am.disabled,.day li.pm.disabled {
+  background-color:#999;
+}
+.day li.am.active:hover,.day li.pm.active:hover {
+  background-color:#116d76;
+}
+
+.day li.pm {
+  float: right;
+  background-color:#ddd;
+  margin-right: 1%;
+}
+.day li.pm:hover {
+  background-color:#ccc ;
+}
+.day li.number {
+  position:absolute;
+  display:block;
+  width:24px;
+  height: 24px;
+  line-height: 24px;
+  left:50%;
+  top:50%;
+  margin-left: -12px;
+  margin-top: -12px;
+  border-radius: 50%;
+  background-color: white;
+  text-align: center;
+  font-size: 14px;
+  padding:0;
+}
+
+
+.modal {
+  position:absolute;
+  background-color: white;
+  padding: 20px;
+  overflow: auto;
+  top:10%;
+  bottom:10%;
+  left:10%;
+  right:10%;
+}
+.modal-wrap {
+  opacity:0;
+  transform:scale(0.1);
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  transition: all 0.3s ease-in-out;
+}
+.modal .close {
+    right: 16px;
+    display: block;
+    position: absolute;
+    top: 16px;
+    font-size: 2em;
+}
+.transition {
+  opacity:1;
+  transform: scale(1);
+}
