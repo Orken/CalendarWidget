@@ -2,6 +2,7 @@
     "name": "orken/calendar-widget-cakephp3",
     "description": "CalendarWidget plugin for CakePHP",
     "type": "cakephp-plugin",
+    "license": "MIT",
     "require": {
         "php": ">=5.5.9",
         "cakephp/cakephp": ">=3.0.0 <4.0.0"
