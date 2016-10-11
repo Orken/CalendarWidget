@@ -1,6 +1,6 @@
 ul {list-style-type: none;}
 .month {
-    padding: 20px 10px;
+    padding: 20px 0px;
     width: 100%;
     background: #1abc9c;
 }
@@ -27,12 +27,14 @@ ul {list-style-type: none;}
 .month .prev {
     float: left;
     padding-top: 10px;
+    padding-left: 10px;
 }
 
 /* Next button */
 .month .next {
     float: right;
     padding-top: 10px;
+    padding-right: 10px;
 }
 .month .text {
   text-align: center;
@@ -71,7 +73,7 @@ ul {list-style-type: none;}
     margin-top: 0px;
     font-size:16px;
     color:#777;
-    padding:2px;
+    padding:0.04%;
 }
 
 /* .days li span {
