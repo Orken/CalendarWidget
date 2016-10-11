@@ -92,7 +92,7 @@
       if (!settings.readOnly)
       {
         if (modalurl) {
-          $(this).on('click','.active,.disabled',openModal);
+          $(this).on('click','.am.active,.pm.active,.am.disabled,.pm.disabled',openModal);
         } else {
           $(this).on('click','.am,.pm',updateEvent);
         }

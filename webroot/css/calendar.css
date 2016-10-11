@@ -80,11 +80,14 @@ ul {list-style-type: none;}
  */
 /* Highlight the "current" day */
 
+.prev .day li.am ,.prev .day li.pm {
+  background-color:#eee;
+}
 .days li.active {
     background: #1abc9c;
 }
 .days li.prev {
-    background: #d6d6d6;
+    background: #e6e6e6;
     color: #bbb !important
 }
 .days li.current {
@@ -103,8 +106,10 @@ ul.day {
   display: block;
 }
 .day li.am {
-  float: left;
   background-color:#ddd ;
+}
+.day li.am {
+  float: left;
   margin-left:1%;
 }
 .day li.am:hover {
@@ -123,8 +128,10 @@ ul.day {
 
 .day li.pm {
   float: right;
-  background-color:#ddd;
   margin-right: 1%;
+}
+.day li.pm {
+  background-color:#ddd;
 }
 .day li.pm:hover {
   background-color:#ccc ;
