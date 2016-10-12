@@ -39,7 +39,7 @@
         let $this = $(this);
         let data = {
           date:$this.closest('ul').data('date'),
-          plage:$this.hasClass('am')?'am':'pm',
+          plage:$this.data('plage'),
           active:$this.hasClass('active')?1:0
         }
         $.ajax({
@@ -52,26 +52,28 @@
       }
 
       var placeEvent = function(json) {
-        $.each(json.events,function(indice,element) {
-          if (element.message) {
-            alert(element.message);
-          } else {
-            let $block = $instance.find('.day[data-date='+element.date+'] .' + element.plage);
-            if (element.active)
-            {
-              $block.addClass((element.disabled)?'disabled':'active');
+        if (json.events) {
+          $.each(json.events,function(indice,element) {
+            if (element.message) {
+              alert(element.message);
             } else {
-              $block.removeClass('active');
+              let $block = $instance.find('.day[data-date='+element.date+'] .' + element.plage);
+              if (element.active)
+              {
+                $block.addClass((element.disabled)?'disabled':'active');
+              } else {
+                $block.removeClass('active');
+              }
             }
-          }
-        });
+          });
+        }
       }
 
       var updateEvent = function() {
         let $this = $(this);
         let data = {
           date:$this.closest('ul').data('date'),
-          plage:$this.hasClass('am')?'am':'pm',
+          plage:$this.data('plage'),
           active:$this.hasClass('active')?1:0
         }
         $.ajax({
@@ -82,7 +84,6 @@
           error:errorEvent
         });
       }
-
       $instance = $(this);
       $.ajax({
         url:datasource,
@@ -92,9 +93,9 @@
       if (!settings.readOnly)
       {
         if (modalurl) {
-          $(this).on('click','.am.active,.pm.active,.am.disabled,.pm.disabled',openModal);
+          $(this).on('click','.active[data-plage],.disabled[data-plage]',openModal);
         } else {
-          $(this).on('click','.am,.pm',updateEvent);
+          $(this).on('click','li[data-plage]',updateEvent);
         }
       }
     });

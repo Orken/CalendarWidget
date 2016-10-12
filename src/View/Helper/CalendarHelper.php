@@ -39,7 +39,7 @@ class CalendarHelper extends Helper
     $content .= '<ul class="days">';
     for ($i=$firstdayOfTheMonth; $i < $lastdayOfTheMonth; $i->modify('+1 day')) {
       $currentmonth = ($i->month == $date->month)?'current':'prev';
-      $content.='<li class="' . $currentmonth . '"><ul class="day" data-date="'.$i->i18nFormat('YYYY-MM-dd').'"><li class="am"></li><li class="pm"></li><li class="number"><span>' . $i->i18nFormat('d') . '</span></li></ul></li>';
+      $content.='<li class="' . $currentmonth . '"><ul class="day" data-date="'.$i->i18nFormat('YYYY-MM-dd').'"><li class="am" data-plage="am"></li><li class="pm" data-plage="pm"></li><li  data-plage="both" class="number"><span>' . $i->i18nFormat('d') . '</span></li></ul></li>';
     }
     $content.= '</ul>';
     $content.= '</div>';
